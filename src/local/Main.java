@@ -25,6 +25,13 @@ public class Main {
         System.out.println("Попытка гонки на выбывание");
         Person whoIsLast = new Person(27);
         whoIsLast.knockOutRace();
+
+
+        System.out.println("Вторая часть ");
+        ListClass list = new ListClass();
+        System.out.println(list.getScroll(10));
+        System.out.println("===============");
+        System.out.println(list.deleteScroll());
     }
 
 }
