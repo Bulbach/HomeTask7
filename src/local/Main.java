@@ -32,6 +32,11 @@ public class Main {
         System.out.println(list.getScroll(10));
         System.out.println("===============");
         System.out.println(list.deleteScroll());
+
+        System.out.println("Игра дженга ");
+        System.out.println(list.getJenga(15));
+        System.out.println("============");
+        list.playJenga();
     }
 
 }
