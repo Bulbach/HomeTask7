@@ -13,8 +13,8 @@ public class SetClass {
     public static class Card{
         private final int identificationNumber;
 
-        public Card(int namber){
-            identificationNumber=namber;
+        public Card(int number){
+            identificationNumber=number;
             BANKCARD.add(this);
         }
 
