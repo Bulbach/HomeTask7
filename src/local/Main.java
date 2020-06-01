@@ -2,9 +2,7 @@ package local;
 
 //import static local.SetClass.BANKCARD;
 
-import java.security.PublicKey;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.TreeSet;
 
 import static local.SortingClass.listOfPupil;
 import static local.SortingClass.sortList;
@@ -21,12 +19,12 @@ public class Main {
         while (!hospitalQueue.getPersons().isEmpty()) {
             counter++;
             if (Person.getNowPosition() < hospitalQueue.AMOUNT_DEQUE) {
-                hospitalQueue.getPersons().add(++Person.nowPosition);}
+                hospitalQueue.getPersons().add(++Person.nowPosition);
+            }
 
             if (counter % 3 == 0) {
-                    hospitalQueue.printPatient(hospitalQueue.getPersons().pollLast().toString() + "Мне только спросить");
-                }
-            else {
+                hospitalQueue.printPatient(hospitalQueue.getPersons().pollLast().toString() + "Мне только спросить");
+            } else {
                 hospitalQueue.printPatient(hospitalQueue.getPersons().pollFirst().toString());
             }
         }
@@ -50,35 +48,35 @@ public class Main {
         System.out.println("Банковские карты");
         SetClass.Card card = new SetClass.Card(23453);
         SetClass.Card card1 = new SetClass.Card(986875);
-        SetClass.Card card2=new SetClass.Card(333321);
-        SetClass.Card card3=new SetClass.Card(334424);
+        SetClass.Card card2 = new SetClass.Card(333321);
+        SetClass.Card card3 = new SetClass.Card(334424);
         System.out.println(SetClass.getBANKCARD());
         System.out.println("===============");
 
         System.out.println("Социальна сеть ");
         SocialNetwork network = new SocialNetwork();
-        SocialNetwork.registerMember("Ваня","Сенпай");
-        SocialNetwork.registerMember("Леха","Зеленый");
-        SocialNetwork.registerMember("Саня","Умник");
-        SocialNetwork.registerMember("Оля","Умница");
-        SocialNetwork.registerMember("Рома","Новенький");
-        SocialNetwork.registerMember("Деня","Бетмен");
+        SocialNetwork.registerMember("Ваня", "Сенпай");
+        SocialNetwork.registerMember("Леха", "Зеленый");
+        SocialNetwork.registerMember("Саня", "Умник");
+        SocialNetwork.registerMember("Оля", "Умница");
+        SocialNetwork.registerMember("Рома", "Новенький");
+        SocialNetwork.registerMember("Деня", "Бетмен");
         System.out.println(SocialNetwork.getMembers());
         SocialNetwork.unRegisterMember("Деня");
         System.out.println(SocialNetwork.getMembers());
         System.out.println("================");
 
         System.out.println("Список учеников");
-        new SortingClass.Pupil("Ваня",9,13);
-        new SortingClass.Pupil("Леха",6,12);
-        new SortingClass.Pupil("Леля",8,12);
-        new SortingClass.Pupil("Деня",5,11);
-        new SortingClass.Pupil("Саня",7,14);
+        new SortingClass.Pupil("Ваня", 9, 13);
+        new SortingClass.Pupil("Леха", 6, 12);
+        new SortingClass.Pupil("Леля", 8, 12);
+        new SortingClass.Pupil("Деня", 5, 11);
+        new SortingClass.Pupil("Саня", 7, 14);
 
         System.out.println(listOfPupil);
         sortList();
         System.out.println(listOfPupil);
-        new SortingClass.Pupil("Аня",6,10);
+        new SortingClass.Pupil("Аня", 6, 10);
         sortList();
         System.out.println(listOfPupil);
         MarkComparator marks = new MarkComparator();
@@ -90,6 +88,23 @@ public class Main {
         SortingClass.getList().sort(ages);
         System.out.println("");
         SortingClass.printList();
+
+        System.out.println("Метод о грузовиках");
+        TreeSet<Truck.Cargo> cargos = new TreeSet<>();
+        cargos.add(new Truck.Cargo(15));
+        cargos.add(new Truck.Cargo(25));
+        cargos.add(new Truck.Cargo(50));
+        cargos.add(new Truck.Cargo(75));
+        cargos.add(new Truck.Cargo(100));
+        cargos.add(new Truck.Cargo(125));
+        cargos.add(new Truck.Cargo(150));
+        cargos.add(new Truck.Cargo(300));
+        cargos.add(new Truck.Cargo(200));
+        Truck piterBild = new Truck(800, cargos);
+        piterBild.loading();
+        System.out.println("Загружены грузы" + cargos);
+        piterBild.unLoading();
+
 
     }
 
